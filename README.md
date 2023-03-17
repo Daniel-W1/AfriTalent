@@ -6,7 +6,7 @@ Welcome to the Afri Talent Source Code Repository! This is the central hub for t
 
 To get started with the Afri Talent source code repository, you will need to clone the repository to your local machine. You can do this by running the following command:
 
-    git clone https://github.com/your-username/afri-talent.git
+    git clone https://github.com/daniel-w1/afri-talent.git
 
 
 Once you have cloned the repository, you can start making changes to the code and contributing to the project. 
