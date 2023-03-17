@@ -21,8 +21,6 @@ We welcome contributions from developers of all skill levels. Whether you're a s
 - Writing tests
 - Refactoring code
 
-Before making any changes to the code, please review our [contribution guidelines](CONTRIBUTING.md) to ensure that your changes align with the project's goals and standards.
-
 ## Contact
 
 If you have any questions or concerns about the Afri Talent source code repository, please don't hesitate to [contact us](mailto:wossendaniel7@gmal.com). We're always happy to help!
