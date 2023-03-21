@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import './Navbar.scss'
 
 const Navbar = () => {
 
   const [active, setActive] = useState(false);
   const [menu, setmenu] = useState(false)
+
+  const {pathname} = useLocation();
 
   const current_user = {
     id:1,
@@ -16,20 +18,20 @@ const Navbar = () => {
   useEffect(() => {
     window.addEventListener("scroll", ()=>{
       console.log(scrollY);
-      window.scrollY > 30 ? setActive(true) : setActive(false);
+      window.scrollY > 0 ? setActive(true) : setActive(false);
     })
   
     return () => {
       window.removeEventListener("scroll",  ()=>{
 
-        window.scrollY > 30 ? setActive(true) : setActive(false);
+        window.scrollY > 0 ? setActive(true) : setActive(false);
       })
     }
   }, [])
   
   return (
     <>
-    <div className= {active ? "navbar active" : "navbar"}>
+    <div className= {active || pathname !== '/' ? "navbar active" : "navbar"}>
         <div className="container">
             <div className="logo">
               <Link to = "/">
@@ -62,21 +64,21 @@ const Navbar = () => {
                         <Link to='/orders' className='link'>Orders</Link>
                         <Link to='messages' className='link'>Messages</Link>
                         <Link to='/' className='link'>Log Out</Link>
-                    </div>}
+                    </div>
+                    }
                   </div>
                 )}
             </div>
         </div>
-          <hr />
-        {active && <>
+        {active || pathname !== '/' && <>
         <div className="menu">
-          <span>Graphics & Design</span>
-          <span>Digital Marketing</span>
-          <span>Writing and Translation</span>
-          <span>Video Animation</span>
-          <span>Music & Audio</span>
-          <span>Programming & Tech</span>
-          <span>Business</span>
+          <Link className='link' to = '/'>Graphics & Design</Link>
+          <Link className='link' to = '/'>Digital Marketing</Link>
+          <Link className='link' to = '/'>Writing and Translation</Link>
+          <Link className='link' to = '/'>Video Animation</Link>
+          <Link className='link' to = '/'>Music & Audio</Link>
+          <Link className='link' to = '/'>Programming & Tech</Link>
+          <Link className='link' to = '/'>Business</Link>
         </div>  
         </>
         }
